@@ -146,7 +146,24 @@
         rpy="1.5708 0 -1.5708" />
     </xacro:mecanum_wheel>
 
-
+  <gazebo>
+    <plugin
+        filename="gz-sim-mecanum-drive-system"
+        name="ignition::gazebo::systems::MecanumDrive">
+        <front_left_joint>wheel_left_front_joint</front_left_joint>
+        <front_right_joint>wheel_right_front_joint</front_right_joint>
+        <back_left_joint>wheel_left_rear_joint</back_left_joint>
+        <back_right_joint>wheel_right_rear_joint</back_right_joint>
+        <wheel_separation>${2*0.153 + wheel_length}</wheel_separation>
+        <wheelbase>0.17</wheelbase>
+        <wheel_radius>${wheel_radius}</wheel_radius>
+        <topic>/cmd_vel</topic>
+        <odom_topic>/odometry</odom_topic>
+        <!-- <min_acceleration>-5</min_acceleration>
+        <max_acceleration>5</max_acceleration> -->
+    </plugin>
+  </gazebo>
+  
   <xacro:if value="$(arg front_camera_enable)">
     <link
       name="cam_front">
