@@ -79,7 +79,7 @@
   <gazebo reference="lidar_link">
         <sensor name="lidar" type="ray">
             <pose> 0 0 0 0 0 0 </pose>
-            <visualize>${visualize_sensors}</visualize>
+            <visualize>$(arg visualize_sensors)</visualize>
             <update_rate>10</update_rate>
             <ray>
                 <scan>
