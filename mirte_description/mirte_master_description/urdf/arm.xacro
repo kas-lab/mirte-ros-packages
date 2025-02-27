@@ -30,6 +30,7 @@
                     rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
             </material>
         </visual>
+        <xacro:if value="$(arg arm_collision)">
         <collision>
             <origin
                 xyz="0 0 0"
@@ -39,7 +40,7 @@
                     filename="file://$(find mirte_master_description)/meshes/arm_Rot.STL" />
             </geometry>
         </collision>
-    </link>
+</xacro:if>    </link>
     <joint
         name="arm_Rot_joint"
         type="revolute">
@@ -89,6 +90,7 @@
                     rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
             </material>
         </visual>
+        <xacro:if value="$(arg arm_collision)">
         <collision>
             <origin
                 xyz="0 0 0"
@@ -98,7 +100,7 @@
                     filename="file://$(find mirte_master_description)/meshes/arm_Shoulder.STL" />
             </geometry>
         </collision>
-    </link>
+</xacro:if>    </link>
     <joint
         name="arm_Shoulder_joint"
         type="revolute">
@@ -148,6 +150,7 @@
                     rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
             </material>
         </visual>
+        <xacro:if value="$(arg arm_collision)">
         <collision>
             <origin
                 xyz="0 0 0"
@@ -157,7 +160,7 @@
                     filename="file://$(find mirte_master_description)/meshes/arm_Elbow.STL" />
             </geometry>
         </collision>
-    </link>
+</xacro:if>    </link>
     <joint
         name="arm_Elbow_joint"
         type="revolute">
@@ -207,6 +210,7 @@
                     rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
             </material>
         </visual>
+        <xacro:if value="$(arg arm_collision)">
         <collision>
             <origin
                 xyz="0 0 0"
@@ -216,7 +220,7 @@
                     filename="file://$(find mirte_master_description)/meshes/arm_Wrist.STL" />
             </geometry>
         </collision>
-    </link>
+</xacro:if>    </link>
     <joint
         name="arm_Wrist_joint"
         type="revolute">
@@ -266,6 +270,7 @@
                     rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
             </material>
         </visual>
+        <xacro:if value="$(arg arm_collision)">
         <collision>
             <origin
                 xyz="0 0 0"
@@ -275,7 +280,7 @@
                     filename="file://$(find mirte_master_description)/meshes/Gripper.STL" />
             </geometry>
         </collision>
-    </link>
+</xacro:if>    </link>
     <joint
         name="Gripper_joint"
         type="revolute">
@@ -326,6 +331,7 @@
                     rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
             </material>
         </visual>
+        <xacro:if value="$(arg arm_collision)">
         <collision>
             <origin
                 xyz="0 0 0"
@@ -335,7 +341,7 @@
                     filename="file://$(find mirte_master_description)/meshes/_gripper_link_r.STL" />
             </geometry>
         </collision>
-    </link>
+</xacro:if>    </link>
     <joint
         name="_gripper_link_joint_r"
         type="revolute">
@@ -386,6 +392,7 @@
                     rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
             </material>
         </visual>
+        <xacro:if value="$(arg arm_collision)">
         <collision>
             <origin
                 xyz="0 0 0"
@@ -395,7 +402,7 @@
                     filename="file://$(find mirte_master_description)/meshes/gripper_finger_r.STL" />
             </geometry>
         </collision>
-    </link>
+</xacro:if>    </link>
     <joint
         name="gripper_finger_joint_r"
         type="revolute">
@@ -444,6 +451,7 @@
                     rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
             </material>
         </visual>
+        <xacro:if value="$(arg arm_collision)">
         <collision>
             <origin
                 xyz="0 0 0"
@@ -453,7 +461,7 @@
                     filename="file://$(find mirte_master_description)/meshes/_gripper_link_l.STL" />
             </geometry>
         </collision>
-    </link>
+</xacro:if>    </link>
     <joint
         name="_gripper_link_joint_l"
         type="revolute">
@@ -503,6 +511,7 @@
                     rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
             </material>
         </visual>
+        <xacro:if value="$(arg arm_collision)">
         <collision>
             <origin
                 xyz="0 0 0"
@@ -512,7 +521,7 @@
                     filename="file://$(find mirte_master_description)/meshes/gripper_finger_l.STL" />
             </geometry>
         </collision>
-    </link>
+</xacro:if>    </link>
     <joint
         name="gripper_finger_joint_l"
         type="revolute">
@@ -561,6 +570,7 @@
                     rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
             </material>
         </visual>
+        <xacro:if value="$(arg arm_collision)">
         <collision>
             <origin
                 xyz="0 0 0"
@@ -570,7 +580,7 @@
                     filename="file://$(find mirte_master_description)/meshes/_Gripper_r.STL" />
             </geometry>
         </collision>
-    </link>
+</xacro:if>    </link>
     <joint
         name="_Gripper_joint_r"
         type="revolute">
@@ -594,7 +604,7 @@
 
 
 
-<gazebo>
+<!-- <gazebo>
     <plugin filename="libgazebo_grasp_fix.so" name="gazebo_grasp_fix">
        <arm>
           <arm_name>finger_gripper</arm_name>
@@ -613,7 +623,7 @@
        <release_tolerance>0.005</release_tolerance>
        <disable_collisions_on_attach>false</disable_collisions_on_attach>
     </plugin>
-</gazebo>
+</gazebo> -->
 
 
 </robot>

@@ -10,6 +10,7 @@
   <xacro:arg name="front_camera_enable" default="False" />
   <xacro:arg name="sonar_enable" default="True" />
   <xacro:arg name="lidar_enable" default="True" />
+  <xacro:arg name="arm_collision" default="False" />
   <xacro:arg name="depth_camera_enable" default="True" />
   <xacro:arg name="imu_enable" default="True" />
   <xacro:arg name="visualize_sensors" default="True" />
