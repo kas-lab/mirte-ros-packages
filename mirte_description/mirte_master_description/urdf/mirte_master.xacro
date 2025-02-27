@@ -10,9 +10,10 @@
   <xacro:arg name="front_camera_enable" default="False" />
   <xacro:arg name="sonar_enable" default="True" />
   <xacro:arg name="lidar_enable" default="True" />
-  <xacro:arg name="depth_camera_enable" default="False" />
-  <xacro:arg name="imu_enable" default="False" />
   <xacro:arg name="arm_collision" default="False" />
+  <xacro:arg name="depth_camera_enable" default="True" />
+  <xacro:arg name="imu_enable" default="True" />
+  <xacro:arg name="visualize_sensors" default="True" />
 
   <xacro:property name="camera_name" value="camera" lazy_eval="False"/>
   <xacro:property name="namespace" value="" scope="global" lazy_eval="False"/>
@@ -28,7 +29,6 @@
   <xacro:property name="wheel_effort" value="5" />
 
   <xacro:property name="base_mass" value="5.0" /> 
-  <xacro:property name="visualize_sensors" value="True" />
 
   <material name="blue">
     <color rgba="0.203125 0.23828125 0.28515625 1.0" />
