@@ -7,6 +7,13 @@
             <mu1>0.0</mu1>
             <mu2>0.0</mu2>
             <material>Gazebo/DarkGrey</material>
+            <collision>
+                <surface>
+                    <contact>
+                    <collide_bitmask>0x01</collide_bitmask>
+                    </contact>
+                </surface>
+            </collision>
         </gazebo>
     </xacro:macro>
 </robot>

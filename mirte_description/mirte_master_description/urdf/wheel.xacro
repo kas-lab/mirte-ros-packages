@@ -29,6 +29,11 @@
       <geometry>
         <cylinder radius="${wheel_radius}" length="${wheel_length}" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x01</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
 

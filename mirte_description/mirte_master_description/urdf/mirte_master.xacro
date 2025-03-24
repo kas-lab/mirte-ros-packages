@@ -44,7 +44,15 @@
   </xacro:if>
 
   <xacro:if value="$(arg imu_enable)">
-    <link name="imu_link" />
+    <link name="imu_link">
+      <collision>
+        <surface>
+              <contact>
+              <collide_bitmask>0x01</collide_bitmask>
+              </contact>
+        </surface>
+      </collision>
+    </link>
 
     <joint name="imu_joint" type="fixed">
       <origin xyz="0 0 0.10" />
@@ -53,7 +61,15 @@
     </joint>
   </xacro:if>
 
-  <link name="base_link" />
+  <link name="base_link">
+    <collision>
+      <surface>
+            <contact>
+            <collide_bitmask>0x01</collide_bitmask>
+            </contact>
+      </surface>
+    </collision>
+  </link>
   <gazebo reference="base_link">
      <kinematic>1</kinematic>
   </gazebo>
@@ -91,6 +107,11 @@
       <geometry>
         <box size="0.19 0.28 0.06" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x01</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
 
     <collision>
@@ -98,6 +119,11 @@
       <geometry>
         <box size="0.18 0.16 0.05" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x01</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
 
     <collision>
@@ -105,6 +131,11 @@
       <geometry>
         <box size="0.013 0.03 0.025" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x01</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
 
     <collision>
@@ -112,6 +143,11 @@
       <geometry>
         <box size="0.013 0.04 0.025" />
       </geometry>
+      <surface>
+        <contact>
+          <collide_bitmask>0x01</collide_bitmask>
+        </contact>
+      </surface>
     </collision>
   </link>
 
@@ -179,6 +215,13 @@
             rgba="0.79608 0.82353 0.93725 1" />
         </material>
       </visual>
+      <collision>
+        <surface>
+            <contact>
+            <collide_bitmask>0x01</collide_bitmask>
+            </contact>
+        </surface>
+      </collision>
     </link>
     <joint
       name="cam_joint_front"
@@ -193,7 +236,15 @@
   </xacro:if>
 
   <xacro:property name="wheel_zoff" value="0.05"/>
-  <link name="base_footprint"/>
+  <link name="base_footprint">
+    <collision>
+      <surface>
+            <contact>
+            <collide_bitmask>0x01</collide_bitmask>
+            </contact>
+      </surface>
+    </collision>
+  </link>
   <joint name="base_joint" type="fixed">
     <parent link="base_link"/>
     <child link="base_footprint"/>
@@ -211,7 +262,15 @@
     </joint>
 
 
-    <link name="link_chassis" />
+    <link name="link_chassis">
+    <collision>
+      <surface>
+            <contact>
+            <collide_bitmask>0x01</collide_bitmask>
+            </contact>
+      </surface>
+    </collision>
+    </link>
     <xacro:ultrasonic_sensor name="left_front">
       <origin
         xyz="0.05297775289576 -0.120282421780502 -0.031"
@@ -281,6 +340,11 @@
           <mesh
             filename="file://$(find mirte_master_description)/meshes/screen.STL" />
         </geometry>
+        <surface>
+          <contact>
+            <collide_bitmask>0x01</collide_bitmask>
+          </contact>
+        </surface>
       </collision>
     </link>
     <joint

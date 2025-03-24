@@ -21,12 +21,26 @@
       </plugin>
       <pose>0 0 0 0 0 0</pose>
     </sensor>
+    <collision>
+      <surface>
+          <contact>
+          <collide_bitmask>0x01</collide_bitmask>
+          </contact>
+      </surface>
+    </collision>
    </gazebo>
   </xacro:if>
 
   <gazebo reference="base_link">
     <material>Gazebo/White</material>
     <gravity>true</gravity>
+    <collision>
+      <surface>
+          <contact>
+          <collide_bitmask>0x01</collide_bitmask>
+          </contact>
+      </surface>
+    </collision>
   </gazebo>
 
   <xacro:include filename="$(find mirte_master_description)/urdf/wheel.gazebo.xacro" />

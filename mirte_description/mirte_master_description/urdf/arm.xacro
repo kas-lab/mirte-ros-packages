@@ -39,6 +39,11 @@
                 <mesh
                     filename="file://$(find mirte_master_description)/meshes/arm_Rot.STL" />
             </geometry>
+            <surface>
+                <contact>
+                    <collide_bitmask>0x01</collide_bitmask>
+                </contact>
+            </surface>
         </collision>
 </xacro:if>    </link>
     <joint
@@ -99,6 +104,11 @@
                 <mesh
                     filename="file://$(find mirte_master_description)/meshes/arm_Shoulder.STL" />
             </geometry>
+            <surface>
+                <contact>
+                    <collide_bitmask>0x01</collide_bitmask>
+                </contact>
+            </surface>
         </collision>
 </xacro:if>    </link>
     <joint
@@ -159,6 +169,11 @@
                 <mesh
                     filename="file://$(find mirte_master_description)/meshes/arm_Elbow.STL" />
             </geometry>
+            <surface>
+                <contact>
+                    <collide_bitmask>0x01</collide_bitmask>
+                </contact>
+            </surface>
         </collision>
 </xacro:if>    </link>
     <joint
@@ -219,6 +234,11 @@
                 <mesh
                     filename="file://$(find mirte_master_description)/meshes/arm_Wrist.STL" />
             </geometry>
+            <surface>
+                <contact>
+                    <collide_bitmask>0x01</collide_bitmask>
+                </contact>
+            </surface>
         </collision>
 </xacro:if>    </link>
     <joint
@@ -279,6 +299,11 @@
                 <mesh
                     filename="file://$(find mirte_master_description)/meshes/Gripper.STL" />
             </geometry>
+            <surface>
+                <contact>
+                    <collide_bitmask>0x01</collide_bitmask>
+                </contact>
+            </surface>
         </collision>
 </xacro:if>    </link>
     <joint
@@ -340,6 +365,11 @@
                 <mesh
                     filename="file://$(find mirte_master_description)/meshes/_gripper_link_r.STL" />
             </geometry>
+            <surface>
+                <contact>
+                    <collide_bitmask>0x01</collide_bitmask>
+                </contact>
+            </surface>
         </collision>
 </xacro:if>    </link>
     <joint
@@ -401,6 +431,11 @@
                 <mesh
                     filename="file://$(find mirte_master_description)/meshes/gripper_finger_r.STL" />
             </geometry>
+            <surface>
+                <contact>
+                    <collide_bitmask>0x01</collide_bitmask>
+                </contact>
+            </surface>
         </collision>
 </xacro:if>    </link>
     <joint
@@ -460,6 +495,11 @@
                 <mesh
                     filename="file://$(find mirte_master_description)/meshes/_gripper_link_l.STL" />
             </geometry>
+            <surface>
+                <contact>
+                    <collide_bitmask>0x01</collide_bitmask>
+                </contact>
+            </surface>
         </collision>
 </xacro:if>    </link>
     <joint
@@ -520,6 +560,11 @@
                 <mesh
                     filename="file://$(find mirte_master_description)/meshes/gripper_finger_l.STL" />
             </geometry>
+            <surface>
+                <contact>
+                    <collide_bitmask>0x01</collide_bitmask>
+                </contact>
+            </surface>
         </collision>
 </xacro:if>    </link>
     <joint
@@ -579,6 +624,11 @@
                 <mesh
                     filename="file://$(find mirte_master_description)/meshes/_Gripper_r.STL" />
             </geometry>
+            <surface>
+                <contact>
+                    <collide_bitmask>0x01</collide_bitmask>
+                </contact>
+            </surface>
         </collision>
 </xacro:if>    </link>
     <joint

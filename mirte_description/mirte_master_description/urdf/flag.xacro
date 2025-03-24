@@ -32,6 +32,11 @@
           <mesh
             filename="package://mirte_master_description/meshes/flag.STL" />
         </geometry>
+        <surface>
+            <contact>
+                <collide_bitmask>0x01</collide_bitmask>
+            </contact>
+        </surface>
       </collision>
     </link>
     <joint

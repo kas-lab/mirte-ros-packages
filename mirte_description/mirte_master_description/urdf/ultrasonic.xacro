@@ -20,6 +20,13 @@
         </geometry>
         <material name="blue" />
       </visual>
+      <collision>
+        <surface>
+            <contact>
+            <collide_bitmask>0x01</collide_bitmask>
+            </contact>
+        </surface>
+      </collision>
     </link>
 
     <gazebo reference="base_sonar_${name}">        
