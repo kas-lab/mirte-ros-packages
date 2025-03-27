@@ -63,12 +63,14 @@
                     </geometry>
                     <material name="${color}" />
                </visual>
+               <xacro:if value="$(arg body_collision)">
                <collision>
                     <origin xyz="-0.0183 0.0 0.0165" rpy="0 0 0" />
                     <geometry>
                          <box size="0.0370 .1650 0.0350" />
                     </geometry>
                </collision>
+               </xacro:if>
                <inertial>
                     <mass value="0.564" />
                     <origin xyz="0 0 0" />

@@ -24,12 +24,14 @@
         <color rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
+    <xacro:if value="$(arg body_collision)">
     <collision>
       <origin xyz="0 0 ${link_origin}" />
       <geometry>
         <cylinder radius="${wheel_radius}" length="${wheel_length}" />
       </geometry>
     </collision>
+    </xacro:if>
   </link>
 
   <joint
