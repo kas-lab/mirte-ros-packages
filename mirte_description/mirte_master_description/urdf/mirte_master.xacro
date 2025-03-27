@@ -10,6 +10,7 @@
   <xacro:arg name="front_camera_enable" default="False" />
   <xacro:arg name="sonar_enable" default="True" />
   <xacro:arg name="lidar_enable" default="True" />
+  <xacro:arg name="body_collision" default="False" />
   <xacro:arg name="arm_collision" default="False" />
   <xacro:arg name="depth_camera_enable" default="True" />
   <xacro:arg name="imu_enable" default="True" />
@@ -86,33 +87,41 @@
       </material>
     </visual>
 
+    <xacro:if value="$(arg body_collision)">
     <collision>
       <origin xyz="0 0 -0.03" />
       <geometry>
         <box size="0.19 0.28 0.06" />
       </geometry>
     </collision>
+    </xacro:if>
 
+    <xacro:if value="$(arg body_collision)">
     <collision>
       <origin xyz="0 0.05 0.045" />
       <geometry>
         <box size="0.18 0.16 0.05" />
       </geometry>
     </collision>
+    </xacro:if>
 
+    <xacro:if value="$(arg body_collision)">
     <collision>
       <origin xyz="-0.062156 -0.002558 0.0125" rpy="0 0 ${radians(32.5)}" />
       <geometry>
         <box size="0.013 0.03 0.025" />
       </geometry>
     </collision>
+    </xacro:if>
 
+    <xacro:if value="$(arg body_collision)">
     <collision>
       <origin xyz="0.064835 0.001664 0.0125" rpy="0 0 ${radians(-32.5)}" />
       <geometry>
         <box size="0.013 0.04 0.025" />
       </geometry>
     </collision>
+    </xacro:if>
   </link>
 
 
@@ -273,6 +282,7 @@
             rgba="0.768627450980392 0.768627450980392 0.768627450980392 1" />
         </material>
       </visual>
+      <xacro:if value="$(arg body_collision)">
       <collision>
         <origin
           xyz="0 0 0"
@@ -282,6 +292,7 @@
             filename="file://$(find mirte_master_description)/meshes/screen.STL" />
         </geometry>
       </collision>
+      </xacro:if>
     </link>
     <joint
       name="screen_joint"

@@ -27,12 +27,14 @@
             rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
         </material>
       </visual>
+      <xacro:if value="$(arg body_collision)">
       <collision>
         <geometry>
           <mesh
             filename="package://mirte_master_description/meshes/flag.STL" />
         </geometry>
       </collision>
+      </xacro:if>
     </link>
     <joint
       name="flag_joint"

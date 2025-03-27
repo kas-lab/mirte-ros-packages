@@ -29,6 +29,7 @@
           rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
       </material>
     </visual>
+    <xacro:if value="$(arg body_collision)">
     <collision>
       <origin
         xyz="0 0 0"
@@ -38,6 +39,7 @@
           filename="file://$(find mirte_master_description)/meshes/lidar.STL" />
       </geometry>
     </collision>
+    </xacro:if>
   </link>
   <joint
     name="lidar_base_joint"
