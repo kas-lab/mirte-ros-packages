@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <ros2_control name="GazeboSystem" type="system">
+  <ros2_control name="IgnitionSystem" type="system">
     <hardware>
-        <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        <plugin>ign_ros2_control/IgnitionSystem</plugin>
     </hardware>
     <joint name="wheel_left_front_joint">
         <command_interface name="velocity">
@@ -112,20 +112,20 @@
   </ros2_control>
 
 
-
-
-
 <gazebo>
-    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+    <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
        <parameters>$(find mirte_master_description)/config/mirte_base_control.yaml</parameters>
        <xacro:if value="$(arg arm_enable)">
           <parameters>$(find mirte_master_description)/config/mirte_arm_control.yaml</parameters>
        </xacro:if>
     </plugin>
-    <plugin filename="libgazebo_ros_planar_move.so" name="gazebo_planar_move">
-       <robot_base_frame>base_link</robot_base_frame> 
+
+    <plugin filename="ignition-gazebo-joint-state-publisher-system" name="ignition::gazebo::systems::JointStatePublisher">
     </plugin>
-    <plugin name="libgazebo_ros_p3d" filename="libgazebo_ros_p3d.so">
+    <!-- <plugin filename="libgazebo_ros_planar_move.so" name="gazebo_planar_move">
+       <robot_base_frame>base_link</robot_base_frame> 
+    </plugin> -->
+    <!-- <plugin name="libgazebo_ros_p3d" filename="libgazebo_ros_p3d.so">
         <ros>
             <namespace>groundtruth</namespace>
             <remapping>odom:=odom</remapping>
@@ -134,7 +134,7 @@
         <body_name>base_link</body_name>
         <update_rate>200.0</update_rate>
         <gaussian_noise>0.0</gaussian_noise>
-     </plugin>
+     </plugin> -->
 
 </gazebo>
 
